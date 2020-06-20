@@ -30,4 +30,6 @@ console.log( ' Escuchando http://127.0.0.1:9876');
 
 
 // http://localhost:9876/doc/test2.json
+// http://localhost:9876/doc/test.pdf
 // http://localhost:9876/pub/test2.html
+// http://localhost:9876/pub/iamgen.png
