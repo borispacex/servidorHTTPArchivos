@@ -1,0 +1,6 @@
+Desarrolle un Servidor Web que atienda peticiones de archivos con diferentes formatos (ASCII, JSON, HTML, PDF). Los archivos estarán distribuidos en dos únicos directorios: /pub y /doc). Cuando el servidor reciba una petición GET con la ruta ‘/doc/', deberá recuperarlo desde el directorio /doc; el mismo procedimiento deberá seguirse con la ruta ‘/pub'. Por ejemplo: /pub/test.html
+
+El servidor deberá verificar si el archivo solicitado existe antes de recuperarlo, de lo contrario deberá retornar una página comunicando esta condición de error (Codigo 404 – Not Found). Use los módulos “http”, “url” y “fs” de Node.
+
+Pruebas: Use un navegador para probar su servidor incluyendo distintos formatos y directorios.
+Ejemplo: http://localhost:9876/doc/test2.json
