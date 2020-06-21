@@ -10,7 +10,15 @@ var servidor = http.createServer(function(request, response) { // request: recib
         if (fs.existsSync('.' + uri)) {                 // si existe ./doc/test2.json
             console.log('Encontrado....');
             var archivo = fs.readFileSync('.' + uri);   //  ./doc/test2.json
-            response.writeHead(200, {'Content-Type': 'text/plain'});
+            var file_split = uri.split('/');
+            var file_name = file_split[2];
+            var ext_split = file_name.split('.');
+            var file_ext = ext_split[1];
+            if (file_ext === 'pdf') {
+                response.writeHead(200, {'Content-Type': 'application/pdf'});
+            }else {
+                response.writeHead(200, {'Content-Type': 'text/plain'});
+            }
             response.end(archivo, 'binary');
             return;
         } else {
@@ -27,7 +35,6 @@ servidor.listen(9876); // http://127.0.0.1:9876
 
 console.log(' -- Servidor Iniciado -- ');
 console.log( ' Escuchando http://127.0.0.1:9876');
-
 
 // http://localhost:9876/doc/test2.json
 // http://localhost:9876/doc/test.pdf
